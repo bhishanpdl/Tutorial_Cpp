@@ -2,4 +2,4 @@
 
 # Repository to learn C++
 
-Link to QuantStack xeus-cling c++ notebook: https://mybinder.org/v2/gh/QuantStack/xeus-cling/stable?filepath=notebooks/xcpp.ipynb
+- [Link to QuantStack xeus-cling c++ notebook](https://mybinder.org/v2/gh/QuantStack/xeus-cling/stable?filepath=notebooks/xcpp.ipynb)
