@@ -2,4 +2,4 @@
 
 # Repository to learn C++
 
-- [Link to c++ notebook](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bhishanpdl/Tutorial_Cpp/master)
+- [Link to c++ notebook](https://mybinder.org/v2/gh/bhishanpdl/Tutorial_Cpp/master)
