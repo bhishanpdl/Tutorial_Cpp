@@ -5,7 +5,7 @@
 - [Link to c++ notebook](https://mybinder.org/v2/gh/bhishanpdl/Tutorial_Cpp/master)
 
 # Using stdc++ header file in MacOS
-- Copy the [stdc++.h](https://gist.githubusercontent.com/eduarc/6022859/raw/3f81acf4e2288d9dea02bd8a7c7a2908bbaeebbe/stdc++.h) to the path `usr/local/include/bits`
+- Copy the file [stdc++.h](https://gist.githubusercontent.com/eduarc/6022859/raw/3f81acf4e2288d9dea02bd8a7c7a2908bbaeebbe/stdc++.h) to the path `usr/local/include/bits`.
 - comment the line of this file `"#include <sdtdalign>`.
 
 Program to test:
