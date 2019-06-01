@@ -1,3 +1,11 @@
+Table of Contents
+=================
+   * [Find element in an array](#find-element-in-an-array)
+   * [Find element in vector](#find-element-in-vector)
+   * [find_if find_if_not](#find_if-find_if_not)
+   * [find_end](#find_end)
+   * [search](#search)
+
 # Find element in an array
 ```c++
 #include <iostream> // std::cout
