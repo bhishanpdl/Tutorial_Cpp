@@ -165,5 +165,19 @@ MultiplyBy3 m3;
 
 for_each(myvec.begin(), myvec.end(), m3); // 30 60 90 120 
 
+//---------------------
+// new vector
+vector<int> myvec2;
+for (int i=1; i<=4; i++)
+    myvec2.push_back(i*3);
 
+for (auto &x: myvec2) cout << x << " ";
+
+void print_even(int a) {  
+    if ( a % 2 == 0){ 
+        cout << a << " "; 
+    } 
+}
+
+for_each(myvec2.begin(), myvec2.end(), print_even); // This prints 6 12
 ```
