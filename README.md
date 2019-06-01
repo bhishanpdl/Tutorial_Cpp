@@ -5,9 +5,9 @@
 - [Link to c++ notebook](https://mybinder.org/v2/gh/bhishanpdl/Tutorial_Cpp/master)
 
 # Using stdc++ header file in MacOS
-- Copy the file [stdc++.h](https://gist.githubusercontent.com/eduarc/6022859/raw/3f81acf4e2288d9dea02bd8a7c7a2908bbaeebbe/stdc++.h) to the path `usr/local/include/bits`.
-- comment the line of this file `"#include <sdtdalign>`.
-- Also copy this edited file to the path `~/miniconda3/envs/pyvz/include/bits` to use this file in jupyter-notebook.
+- Download the file [stdc++.h](https://gist.githubusercontent.com/eduarc/6022859/raw/3f81acf4e2288d9dea02bd8a7c7a2908bbaeebbe/stdc++.h).
+- Comment the line of this file `"#include <sdtdalign>`.
+- Copy the file to the path `~/miniconda3/envs/pyvz/include/c++/v1/bits/`.
 
 Program to test:
 ```c++
