@@ -3,6 +3,7 @@ Table of Contents
    * [accumulate](#accumulate)
    * [algorithm: all_any_none_of](#algorithm-all_any_none_of)
    * [numeric: adjacent_difference](#numeric-adjacent_difference)
+   * [for_each](#for_each)
 
 # accumulate
 ```c++
