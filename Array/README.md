@@ -10,33 +10,34 @@ Table of Contents
 #include <vector>
 #include <numeric>
 #include <string>
-#include <functional>
+#include <functional> // multliplies<int>()
+
+using namespace std;
  
-int main()
-{
-    std::vector<int> v{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
- 
-    int sum = std::accumulate(v.begin(), v.end(), 0);
- 
-    int product = std::accumulate(v.begin(), v.end(), 1, std::multiplies<int>());
- 
-    auto dash_fold = [](std::string a, int b) {
-                         return std::move(a) + '-' + std::to_string(b);
-                     };
- 
-    std::string s = std::accumulate(std::next(v.begin()), v.end(),
-                                    std::to_string(v[0]), // start with first element
-                                    dash_fold);
- 
-    // Right fold using reverse iterators
-    std::string rs = std::accumulate(std::next(v.rbegin()), v.rend(),
-                                     std::to_string(v.back()), // start with last element
-                                     dash_fold);
- 
-    std::cout << "sum: " << sum << '\n'
-              << "product: " << product << '\n'
-              << "dash-separated string: " << s << '\n'
-              << "dash-separated string (right-folded): " << rs << '\n';
+int main(){
+vector<int> v{1, 2, 3, 4};
+
+int mysum = accumulate(v.begin(), v.end(), 0);
+
+int myproduct = accumulate(v.begin(), v.end(), 1, multiplies<int>());
+
+auto dash_fold = [](string a, int b) {
+                     return move(a) + '-' + to_string(b);
+                 };
+
+string s = accumulate(next(v.begin()), v.end(),
+                                to_string(v[0]), // start with first element
+                                dash_fold);
+
+// Right fold using reverse iterators
+string rs = accumulate(next(v.rbegin()), v.rend(),
+                                 to_string(v.back()), // start with last element
+                                 dash_fold);
+
+cout << "sum: " << mysum << '\n'
+     << "product: " << myproduct << '\n'
+     << "dash-separated string: " << s << '\n'
+     << "dash-separated string (right-folded): " << rs << '\n';
 }
 ```
 
