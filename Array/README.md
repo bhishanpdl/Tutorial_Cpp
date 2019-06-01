@@ -1,8 +1,8 @@
-# algorithms: all_any_none_of
+# algorithm: all_any_none_of
 ```c++
 #include <vector>
 #include <numeric>
-#include <algorithm>
+#include <algorithm> // all_of, none_of, any_of, copy_n, iota
 #include <iterator>
 #include <iostream>
 #include <functional>
