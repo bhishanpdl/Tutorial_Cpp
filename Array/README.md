@@ -34,3 +34,46 @@ int main()
     }
 }
 ```
+
+# numeric: adjacent_difference
+```c++
+#include <iostream>  
+#include <functional> // for multiplies function 
+#include <numeric>   //for adjacent_difference 
+  
+using namespace std; 
+  
+int myfun (int x, int y)  
+{ 
+    return x+y; 
+} 
+  
+int main ()  
+{ 
+    int a[] = { 1, 2, 3, 4, 5, 6} ; 
+    int b[6]; 
+      
+    // using adjacent_difference function 
+    adjacent_difference (a, a+6, b); 
+    cout << "\nResult using adjacent_difference: "; 
+    for (int i=0; i<6; i++)  
+        std::cout << b[i] << ' ' ;    
+      
+    // using adjacent_difference function 
+    // user defined function     
+    adjacent_difference (a, a+6, b, myfun); 
+    cout << "\nResult using accumulate with user-"
+             "defined function: "; 
+    for (int i=0; i<6; i++)  
+        std::cout << b[i] << ' '; 
+      
+    // using adjacent_difference with pre-defined function 
+    adjacent_difference (a, a+6, b, multiplies<int>() ) ; 
+      
+    cout << "\nResult using accumulate with pre-defined function: " ; 
+    for (int i=0; i<6; i++)  
+        std::cout << b[i] << ' '; 
+      
+    return 0; 
+} 
+```
