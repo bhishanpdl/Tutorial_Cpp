@@ -2,6 +2,7 @@
 
 # c++ jupyter-notebook shortcomings
 ```c++
+// print fuction causes jupyter kernel to restart
 std::vector<int> nums{3, 4, 2, 8, 15, 267};
 auto print = [](const int& n) { std::cout << " " << n; };
  
