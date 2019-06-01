@@ -130,7 +130,10 @@ int main ()
 using namespace std;
 
 vector<int> nums = {10,20,30,40};
-std::for_each(nums.begin(), nums.end(), [](int &n){ n++; });
 
+std::for_each(nums.begin(), nums.end(), [](int &n){ n++; });
 for (auto &x: nums) cout << x << " "; // gives 11,21,31,41
+
+std::for_each(nums.begin(), nums.end(), [](int &n){ n=n*2; });
+for (auto &x: nums) cout << x << " ";
 ```
