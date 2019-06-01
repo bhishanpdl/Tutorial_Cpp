@@ -129,11 +129,41 @@ int main ()
 
 using namespace std;
 
-vector<int> nums = {10,20,30,40};
+int arr[4] = {10,20,30,40};
+vector<int> v = {10,20,30,40};
 
-std::for_each(nums.begin(), nums.end(), [](int &n){ n++; });
-for (auto &x: nums) cout << x << " "; // gives 11,21,31,41
+//increase by 1
+std::for_each(v.begin(), v.end(), [](int &n){ n++; });
+for (auto &x: v) cout << x << " "; // 11 21 31 41 
 
-std::for_each(nums.begin(), nums.end(), [](int &n){ n=n*2; });
-for (auto &x: nums) cout << x << " ";
+//decrease by 1
+std::for_each(begin(v), end(v), [](int &n){ n--; });
+for (auto &x: v) cout << x << " "; // 10 20 30 40 
+
+//multiply by 2
+std::for_each(v.begin(), v.end(), [](int &n){ n=n*2; });
+for (auto &x: v) cout << x << " "; // 20 40 60 80
+
+//for_each with user function
+void printx2(int x) { cout << x * 2 << " "; }
+
+vector<int> vec = {10,20,30,40};
+for_each(vec.begin(), vec.end(), printx2);  // 20 40 60 80 
+
+//for_each with array
+for_each(arr, arr+4, printx2);  // 20 40 60 80
+
+//for_each with struct object
+struct MultiplyBy3 { 
+    void operator() (int a){ 
+        cout << a * 3 << " "; 
+    } 
+};
+
+vector<int> myvec = {10,20,30,40};
+MultiplyBy3 m3;
+
+for_each(myvec.begin(), myvec.end(), m3); // 30 60 90 120 
+
+
 ```
