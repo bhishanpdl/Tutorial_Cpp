@@ -1,3 +1,9 @@
+Table of Contents
+=================
+   * [partition print two parts](#partition-print-two-parts)
+   * [partition to two parts no sorting](#partition-to-two-parts-no-sorting)
+   * [partition and sorting into two vectors](#partition-and-sorting-into-two-vectors)
+
 # partition print two parts
 ```c++
 #include <algorithm>
@@ -26,9 +32,8 @@ After partition:
 
 # partition to two parts no sorting
 ```c++
-#include <algorithm>
-#include <array>
 #include <iostream>
+#include <algorithm>
 #include <iterator>
 
 using namespace std;
@@ -39,18 +44,14 @@ int arr [9] = {2,1,5,8,9,4,10,15,20};
 // get partition point  
 int *pt = stable_partition(arr, end(arr), [&](int n) {return n < pivot;});
 
-// create two vectors consisting of left and right hand side
-// of partition
+// get left and right parts
 vector<int> a1(arr, pt);
 vector<int> a2(pt, end(arr));
 
 // output results
-for (auto& i : a1)
-    cout << i << " ";
-cout << '\n';
-
-for (auto& i : a2)
-    cout << i << " ";
+for (auto& i : a1) cout << i << " ";
+cout << endl;
+for (auto& i : a2) cout << i << " ";
 ```
 
 # partition and sorting into two vectors
