@@ -56,26 +56,42 @@ for (auto& i : a2) cout << i << " ";
 
 # partition and sorting into two vectors
 ```c++
-std::vector<int> vec = {2,1,5,8,9,4,10,15,20};
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
+using namespace std;
+
+// vector
+vector<int> vec = {2,1,5,8,9,4,10,15,20};
 auto is_lower_than_8 = [](int i){ return i < 8; };
 
-std::partition(vec.begin(), vec.end(), is_lower_than_8 );
+// partition
+partition(vec.begin(), vec.end(), is_lower_than_8 );
 
-auto par = std::partition_point(vec.begin(), vec.end(), is_lower_than_8 );
 
-std::cout << "Before partition:\n    ";
-std::vector<int> p1(vec.begin(), par);
-std::sort(p1.begin(), p1.end());
-std::copy(p1.begin(), p1.end(), std::ostream_iterator<int>(std::cout, " "));
+// partition point
+auto par = partition_point(vec.begin(), vec.end(), is_lower_than_8 );
 
-std::cout << "\nAfter partition:\n    ";
-std::vector<int> p2(par, vec.end());
-std::sort(p2.begin(), p2.end());
-std::copy(p2.begin(), p2.end(), std::ostream_iterator<int>(std::cout, " "));
 
-Before partition:
+// left
+cout << "sorted left:\n    ";
+vector<int> p1(vec.begin(), par);
+sort(p1.begin(), p1.end()); // sort left
+for (int &x: p1) cout << x << " ";
+cout << endl;
+
+
+// right
+cout << "\nsorted right:\n    ";
+vector<int> p2(par, vec.end());
+sort(p2.begin(), p2.end()); // sort right
+for (int &x: p2) cout << x << " ";
+cout << endl;
+
+left:
     1 2 4 5 
-After partition:
+
+right:
     8 9 10 15 20 
 ```
