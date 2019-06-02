@@ -26,27 +26,31 @@ After partition:
 
 # partition to two parts no sorting
 ```c++
+#include <algorithm>
+#include <array>
+#include <iostream>
+#include <iterator>
+
+using namespace std;
+
 int pivot = 8;
 int arr [9] = {2,1,5,8,9,4,10,15,20};
 
 // get partition point  
-int *pt = std::stable_partition(arr, std::end(arr), [&](int n) {return n < pivot;});
+int *pt = stable_partition(arr, end(arr), [&](int n) {return n < pivot;});
 
 // create two vectors consisting of left and right hand side
 // of partition
-std::vector<int> a1(arr, pt);
-std::vector<int> a2(pt, std::end(arr));
+vector<int> a1(arr, pt);
+vector<int> a2(pt, end(arr));
 
 // output results
 for (auto& i : a1)
-    std::cout << i << " ";
-std::cout << '\n';
+    cout << i << " ";
+cout << '\n';
 
 for (auto& i : a2)
-    std::cout << i << " ";
-    
- 2 1 5 4 
-8 9 10 15 20
+    cout << i << " ";
 ```
 
 # partition and sorting into two vectors
