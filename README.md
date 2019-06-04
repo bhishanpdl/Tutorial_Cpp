@@ -2,7 +2,7 @@
 
 # c++ jupyter-notebook shortcomings
 ```c++
-// print fuction causes jupyter kernel to restart
+// print fuction causes jupyter kernel to restart, in those cases, run whole codes in a single cell.
 std::vector<int> nums{3, 4, 2, 8, 15, 267};
 auto print = [](const int& n) { std::cout << " " << n; };
  
@@ -16,6 +16,7 @@ for (auto &x: nums) cout << x << " ";
 - Download the file [stdc++.h](https://gist.githubusercontent.com/eduarc/6022859/raw/3f81acf4e2288d9dea02bd8a7c7a2908bbaeebbe/stdc++.h).
 - Comment the line of this file `"#include <sdtdalign>`.
 - Copy the file to the path `~/miniconda3/envs/pyvz/include/c++/v1/bits/`.
+- Sometimes, stdc++ is not needed, simply uses `#include <algorithm>`
 
 Program to test:
 ```c++
