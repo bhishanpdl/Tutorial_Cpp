@@ -1,11 +1,5 @@
-# print 2d vector
-```c++
-template<typename T>
-void print2d(T vec2d){
-     for (auto row: vec2d){
-         for (auto x: row) 
-             cout << x << " ";
-             cout << endl;
-    }
-}
-```
+ # To run c++ notebook online
+https://github.com/QuantStack/xeus-cling
+Go to QuantStack xeus-cling github repo >  Open the notebook in binder > Delete all cells (hit cut button repeatedly) > Edit the
+notebook> Download it.
+
