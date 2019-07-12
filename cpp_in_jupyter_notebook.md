@@ -1,10 +1,69 @@
-# To run c++ in jupyter notebook
-Go to QuantStack xeus-cling notebook in binder.
-https://github.com/QuantStack/xeus-cling
+ # To run c++ notebook online
+Reference : https://github.com/QuantStack/xeus-cling  
+- Go to QuantStack xeus-cling github repo.
+- Open the notebook in binder.
+- Delete all cells (hit cut button repeatedly).
+- Edit the notebook and rename its title.
+- Download the notebook.
+- Note: If I load a notebook in mybinder.org it takes tooooo long time, but opening quantstack notebook takes much shorter time.
+  So, simpliy open that notebook, edit and save to local computer. Thats the best way.
+  
+# NOTE
+- Do not use int main() or return 0 inside jupyter-notebook.
+- Write a complete funtion in one cell. If you encounter some code run error, try to put all codes in a single cell and run it.
+- Write template class in separate cell.
+- We can not define same named variables with different types in different cell. The whole notebook just a single c++ script.
+  
+# Example of c++ notebook
+```c++
+// cell1
 
-Delete or change the cells and when you are done just download the notebook.
+#include<iostream>
+#include<vector>
 
-# c++ jupyter-notebook shortcomings
+using namespace std;
+using vec2d_t = std::vector<vector<int>>;
+
+//cell2
+template<typename T>
+void print2d(T vec2d){
+     for (auto row: vec2d){
+         for (auto x: row) 
+             cout << x << " ";
+             cout << endl;
+    }
+}
+
+//cell3
+class FlipTranspose {
+public:
+    vec2d_t flipAndInvertImage(vec2d_t& A)
+    {
+        for (auto &row: A) reverse(row.begin(), row.end());
+        for (auto &row: A) for (int &i: row) i^=1;
+        return A;
+    }
+};
+
+//cell4
+vec2d_t A = {{1,1,0}, {1,0,1}, {0,0,0}};
+vector< vector<int> > B;
+
+B = A;
+FlipTranspose sol;
+
+B = sol.flipAndInvertImage(A); // A is also changed in-place
+print2d(A)
+
+// cell5
+A
+
+```
+
+# c++ jupyter-notebook shortcomings and fixes
+There are some issues with jupyter-notebook. Sometimes the notebook hangs if we run some specific code, and we need to resort
+alternative ways to refactor the code or re-run the code in c++ editor instead of notebook. Here are some examples of problems and fixes.
+
 ```c++
 // print fuction causes jupyter kernel to restart, in those cases, run whole codes in a single cell.
 std::vector<int> nums{3, 4, 2, 8, 15, 267};
@@ -14,41 +73,4 @@ std::for_each(nums.begin(), nums.end(), print); // This line causes jupyter-note
 
 // solution dont use print function just do this:
 for (auto &x: nums) cout << x << " ";
-```
-
-# Using stdc++ header file in MacOS
-- Download the file [stdc++.h](https://gist.githubusercontent.com/eduarc/6022859/raw/3f81acf4e2288d9dea02bd8a7c7a2908bbaeebbe/stdc++.h).
-- Comment the line of this file `"#include <sdtdalign>`.
-- Copy the file to the path `~/miniconda3/envs/pyvz/include/c++/v1/bits/`.
-- Sometimes, stdc++ is not needed, simply uses `#include <algorithm>`
-
-Program to test:
-```c++
-
-#include <bits/stdc++.h> 
-using namespace std; 
-  
-// Function to print the list 
-void printList(list<string> mylist) 
-{ 
-  
-    // Get the iterator 
-    list<string>::iterator it; 
-  
-    // printing all the elements of the list 
-    for (it = mylist.begin(); it != mylist.end(); ++it) 
-        cout << ' ' << *it; 
-    cout << '\n'; 
-} 
-  
-int main() 
-{ 
-    // Create a list with the help of constructor 
-    // This will insert Geeks 5 times in the list 
-    list<string> myList(5, "Geeks"); 
-  
-    printList(myList); 
-  
-    return 0; 
-} 
 ```
