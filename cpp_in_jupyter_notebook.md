@@ -1,4 +1,8 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bhishanpdl/Tutorial_Cpp/master)
+# To run c++ in jupyter notebook
+Go to QuantStack xeus-cling notebook in binder.
+https://github.com/QuantStack/xeus-cling
+
+Delete or change the cells and when you are done just download the notebook.
 
 # c++ jupyter-notebook shortcomings
 ```c++
