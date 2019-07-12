@@ -2,7 +2,7 @@
 Reference : https://github.com/QuantStack/xeus-cling  
 - Go to QuantStack xeus-cling github repo.
 - Open the notebook in binder.
-- Delete all cells (hit cut button repeatedly).
+- Delete all cells (hit cut button repeatedly) (or, esc dd repeatedly).
 - Edit the notebook and rename its title.
 - Download the notebook.
 - Note: If I load a notebook in mybinder.org it takes tooooo long time, but opening quantstack notebook takes much shorter time.
