@@ -1,4 +1,7 @@
- # To run c++ notebook online
+# Resources
+- [C++ Templates FAQ](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl)
+
+# To run c++ notebook online
 Reference : https://github.com/QuantStack/xeus-cling  
 - Go to QuantStack xeus-cling github repo.
 - Open the notebook in binder.
